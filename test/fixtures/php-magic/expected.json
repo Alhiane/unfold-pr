@@ -1,0 +1,22 @@
+{
+  "app/Http/Controllers/LogOutOtherSessionsController.php": {
+    "status": "added",
+    "changed": [
+      "LogOutOtherSessionsController.__construct",
+      "LogOutOtherSessionsController.__invoke",
+      "LogOutOtherSessionsController.noContent"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [
+      "LogOutOtherSessionsController.__invoke > LogOutOtherSessionsController.noContent"
+    ],
+    "tiers": {
+      "LogOutOtherSessionsController.__construct": 0,
+      "LogOutOtherSessionsController.__invoke": 0,
+      "LogOutOtherSessionsController.noContent": 1
+    },
+    "flags": {}
+  }
+}

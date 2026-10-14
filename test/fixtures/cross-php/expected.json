@@ -1,0 +1,75 @@
+{
+  "app/Http/Controllers/LogOutOtherSessionsController.php": {
+    "status": "added",
+    "changed": [
+      "LogOutOtherSessionsController.__construct",
+      "LogOutOtherSessionsController.__invoke",
+      "LogOutOtherSessionsController.untyped"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {
+      "LogOutOtherSessionsController.__construct": 0,
+      "LogOutOtherSessionsController.__invoke": 0,
+      "LogOutOtherSessionsController.untyped": 0
+    },
+    "flags": {}
+  },
+  "app/Legacy/TokenManager.php": {
+    "status": "added",
+    "changed": [
+      "TokenManager.destroyOtherSessions",
+      "TokenManager.flushCache"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {
+      "TokenManager.destroyOtherSessions": 0,
+      "TokenManager.flushCache": 0
+    },
+    "flags": {}
+  },
+  "app/Services/Auth/AuthenticationService.php": {
+    "status": "added",
+    "changed": [
+      "AuthenticationService.logOutOtherSessions"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {
+      "AuthenticationService.logOutOtherSessions": 0
+    },
+    "flags": {}
+  },
+  "app/Services/Auth/TokenManager.php": {
+    "status": "added",
+    "changed": [
+      "TokenManager.destroyOtherSessions",
+      "TokenManager.flushCache",
+      "TokenManager.current"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [
+      "TokenManager.destroyOtherSessions > TokenManager.current"
+    ],
+    "tiers": {
+      "TokenManager.destroyOtherSessions": 0,
+      "TokenManager.flushCache": 0,
+      "TokenManager.current": 1
+    },
+    "flags": {}
+  },
+  "(cross-file links)": [
+    "app/Http/Controllers/LogOutOtherSessionsController.php: LogOutOtherSessionsController.__invoke > app/Services/Auth/AuthenticationService.php: AuthenticationService.logOutOtherSessions",
+    "app/Http/Controllers/LogOutOtherSessionsController.php: LogOutOtherSessionsController.__invoke > app/Services/Auth/TokenManager.php: TokenManager.flushCache",
+    "app/Services/Auth/AuthenticationService.php: AuthenticationService.logOutOtherSessions > app/Services/Auth/TokenManager.php: TokenManager.destroyOtherSessions"
+  ]
+}

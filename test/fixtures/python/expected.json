@@ -1,0 +1,63 @@
+{
+  "scripts/report.py": {
+    "status": "added",
+    "changed": [
+      "cached",
+      "Report.__init__",
+      "Report.build",
+      "Report._label",
+      "Report._unused",
+      "render"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [
+      "Report.build > Report._label",
+      "render > Report.__init__",
+      "render > Report.build",
+      "render > cached"
+    ],
+    "tiers": {
+      "cached": 1,
+      "Report.__init__": 1,
+      "Report.build": 1,
+      "Report._label": 2,
+      "Report._unused": 0,
+      "render": 0
+    },
+    "flags": {
+      "Report._unused": [
+        "private · never called"
+      ]
+    }
+  },
+  "scripts/sync.py": {
+    "status": "added",
+    "changed": [
+      "load",
+      "clean",
+      "normalize",
+      "main"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [
+      "(top-level code L23)"
+    ],
+    "edges": [
+      "(top-level code L23) > main",
+      "clean > normalize",
+      "main > clean",
+      "main > load"
+    ],
+    "tiers": {
+      "load": 2,
+      "clean": 2,
+      "normalize": 3,
+      "main": 1,
+      "(top-level code L23)": 0
+    },
+    "flags": {}
+  }
+}

@@ -1,0 +1,19 @@
+# Copy this file into any repo's .github/workflows/ to get a map on every PR.
+name: Unfold
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]   # closed: removes the hosted map
+permissions:
+  contents: read    # set to write only if you enable preview: images or host: pages
+  pull-requests: write
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: ./   # in other repos: uses: <owner>/unfold@main
+        # with:
+        #   preview: images   # opt-in screenshots of the map (needs contents: write)
+        #   theme: dark
+        #   host: pages       # opt-in: interactive map on GitHub Pages at /pr-<n>/. Pages are PUBLIC: public repos only

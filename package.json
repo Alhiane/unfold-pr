@@ -1,0 +1,44 @@
+{
+  "name": "unfold-pr",
+  "version": "0.1.0",
+  "description": "See a diff as the functions it touches, tiered by who calls whom.",
+  "main": "src/extract.js",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "code-review",
+    "pull-request",
+    "call-graph",
+    "tree-sitter",
+    "ai-code"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "puppeteer-core": "^24.10.0",
+    "tree-sitter-wasms": "^0.1.13",
+    "web-tree-sitter": "^0.22.6"
+  },
+  "bin": {
+    "unfold": "bin/cli.js",
+    "unfold-pr": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "action.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alhiane/unfold-pr.git"
+  },
+  "homepage": "https://github.com/Alhiane/unfold-pr#readme",
+  "bugs": {
+    "url": "https://github.com/Alhiane/unfold-pr/issues"
+  }
+}

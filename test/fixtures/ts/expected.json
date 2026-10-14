@@ -1,0 +1,86 @@
+{
+  "src/cart.ts": {
+    "status": "added",
+    "changed": [
+      "round2",
+      "lineTotal",
+      "Cart.add",
+      "Cart.subtotal",
+      "Cart.total"
+    ],
+    "unchanged": [],
+    "constants": [
+      "TAX_RATE"
+    ],
+    "topLevel": [],
+    "edges": [
+      "Cart.subtotal > lineTotal",
+      "Cart.subtotal > round2",
+      "Cart.total > Cart.subtotal",
+      "Cart.total > TAX_RATE",
+      "Cart.total > round2"
+    ],
+    "tiers": {
+      "TAX_RATE": 3,
+      "round2": 2,
+      "lineTotal": 2,
+      "Cart.add": 0,
+      "Cart.subtotal": 1,
+      "Cart.total": 0
+    },
+    "flags": {}
+  },
+  "src/logs.ts": {
+    "status": "modified",
+    "changed": [
+      "parseTimestamp",
+      "parseLogLine",
+      "parseLog",
+      "countByLevel",
+      "filterBySeverity",
+      "normalizeMessage",
+      "topRecurringMessages",
+      "errorsBySource",
+      "findBursts",
+      "formatDuration",
+      "summariseLog"
+    ],
+    "unchanged": [],
+    "constants": [
+      "LINE_PATTERN",
+      "LEVEL_ORDER"
+    ],
+    "topLevel": [],
+    "edges": [
+      "errorsBySource > filterBySeverity",
+      "filterBySeverity > LEVEL_ORDER",
+      "parseLog > parseLogLine",
+      "parseLogLine > LEVEL_ORDER",
+      "parseLogLine > LINE_PATTERN",
+      "parseLogLine > parseTimestamp",
+      "summariseLog > countByLevel",
+      "summariseLog > errorsBySource",
+      "summariseLog > findBursts",
+      "summariseLog > formatDuration",
+      "summariseLog > parseLog",
+      "summariseLog > topRecurringMessages",
+      "topRecurringMessages > normalizeMessage"
+    ],
+    "tiers": {
+      "LINE_PATTERN": 4,
+      "LEVEL_ORDER": 4,
+      "parseTimestamp": 3,
+      "parseLogLine": 2,
+      "parseLog": 1,
+      "countByLevel": 1,
+      "filterBySeverity": 2,
+      "normalizeMessage": 2,
+      "topRecurringMessages": 1,
+      "errorsBySource": 1,
+      "findBursts": 1,
+      "formatDuration": 1,
+      "summariseLog": 0
+    },
+    "flags": {}
+  }
+}

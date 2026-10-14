@@ -1,0 +1,30 @@
+{
+  "resources/js/OtherSessions.vue": {
+    "status": "added",
+    "changed": [
+      "confirmFirst",
+      "logOutOtherSessions"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [
+      "logOutOtherSessions > confirmFirst"
+    ],
+    "tiers": {
+      "confirmFirst": 1,
+      "logOutOtherSessions": 0
+    },
+    "flags": {}
+  },
+  "resources/js/Settings.vue": {
+    "status": "modified",
+    "changed": [],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {},
+    "flags": {}
+  }
+}

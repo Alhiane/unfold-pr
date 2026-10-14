@@ -1,0 +1,95 @@
+{
+  "resources/js/a/helpers.ts": {
+    "status": "added",
+    "changed": [
+      "pick"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {
+      "pick": 0
+    },
+    "flags": {}
+  },
+  "resources/js/b/helpers.ts": {
+    "status": "added",
+    "changed": [
+      "pick"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {
+      "pick": 0
+    },
+    "flags": {}
+  },
+  "resources/js/components/OtherSessions.vue": {
+    "status": "added",
+    "changed": [
+      "logOutOtherSessions"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {
+      "logOutOtherSessions": 0
+    },
+    "flags": {}
+  },
+  "resources/js/services/authService.ts": {
+    "status": "added",
+    "changed": [
+      "logOutOtherSessions"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {
+      "logOutOtherSessions": 0
+    },
+    "flags": {}
+  },
+  "resources/js/services/http.ts": {
+    "status": "added",
+    "changed": [
+      "post",
+      "send"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [
+      "post > send"
+    ],
+    "tiers": {
+      "post": 0,
+      "send": 1
+    },
+    "flags": {}
+  },
+  "resources/js/utils/format.ts": {
+    "status": "added",
+    "changed": [
+      "formatDate"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [],
+    "tiers": {
+      "formatDate": 0
+    },
+    "flags": {}
+  },
+  "(cross-file links)": [
+    "resources/js/components/OtherSessions.vue: logOutOtherSessions > resources/js/services/authService.ts: logOutOtherSessions",
+    "resources/js/services/authService.ts: logOutOtherSessions > resources/js/services/http.ts: post",
+    "resources/js/services/authService.ts: logOutOtherSessions > resources/js/utils/format.ts: formatDate"
+  ]
+}

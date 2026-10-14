@@ -1,0 +1,27 @@
+# Publishes the npm package when a version tag lands on the public repository.
+# Uses npm trusted publishing (OIDC): no token. On npmjs.com, the package's settings must list
+# this repository and this workflow file (release.yml) as its trusted publisher.
+name: Release
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+permissions:
+  contents: read
+  id-token: write   # lets npm verify this workflow instead of a token
+jobs:
+  npm:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # No registry-url here: setup-node would set NODE_AUTH_TOKEN, which stops npm from using OIDC
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm install -g npm@latest   # trusted publishing needs npm 11.5.1+
+      - run: npm ci && npm test
+      - name: Publish
+        run: |
+          NAME=$(node -p "require('./package.json').name"); VERSION=$(node -p "require('./package.json').version")
+          if [ "v${VERSION}" != "${GITHUB_REF_NAME}" ]; then echo "tag ${GITHUB_REF_NAME} doesn't match package.json ${VERSION}"; exit 1; fi
+          if npm view "${NAME}@${VERSION}" version >/dev/null 2>&1; then echo "${NAME}@${VERSION} is already on npm"; exit 0; fi
+          npm publish --access public

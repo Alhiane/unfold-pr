@@ -1,0 +1,66 @@
+{
+  "app/Services/LeadRouter.php": {
+    "status": "modified",
+    "changed": [
+      "LeadRouter.route",
+      "LeadRouter.isDuplicate",
+      "LeadRouter.pickBuyer",
+      "LeadRouter.eligibleBuyers",
+      "LeadRouter.fallbackQueue",
+      "LeadRouter.normalizeEmail",
+      "LeadRouter.scoreLead"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [
+      "LeadRouter.isDuplicate > LeadRouter.normalizeEmail",
+      "LeadRouter.pickBuyer > LeadRouter.eligibleBuyers",
+      "LeadRouter.route > LeadRouter.fallbackQueue",
+      "LeadRouter.route > LeadRouter.isDuplicate",
+      "LeadRouter.route > LeadRouter.pickBuyer"
+    ],
+    "tiers": {
+      "LeadRouter.route": 0,
+      "LeadRouter.isDuplicate": 1,
+      "LeadRouter.pickBuyer": 1,
+      "LeadRouter.eligibleBuyers": 2,
+      "LeadRouter.fallbackQueue": 1,
+      "LeadRouter.normalizeEmail": 2,
+      "LeadRouter.scoreLead": 0
+    },
+    "flags": {
+      "LeadRouter.scoreLead": [
+        "private · never called"
+      ]
+    }
+  },
+  "app/Support/Money.php": {
+    "status": "added",
+    "changed": [
+      "Money.of",
+      "Money.clamp",
+      "Money.format",
+      "Money.cents",
+      "Percent.format",
+      "Percent.clamp"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [
+      "Money.format > Money.cents",
+      "Money.of > Money.clamp",
+      "Percent.format > Percent.clamp"
+    ],
+    "tiers": {
+      "Money.of": 0,
+      "Money.clamp": 1,
+      "Money.format": 0,
+      "Money.cents": 1,
+      "Percent.format": 0,
+      "Percent.clamp": 1
+    },
+    "flags": {}
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "bin/comment.js": {
+    "status": "modified",
+    "changed": [
+      "link"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [
+      "(top-level code L9)"
+    ],
+    "edges": [
+      "(top-level code L9) > link"
+    ],
+    "tiers": {
+      "link": 1,
+      "(top-level code L9)": 0
+    },
+    "flags": {}
+  },
+  "bin/deploy.sh": {
+    "status": "modified",
+    "changed": [
+      "publish",
+      "upload"
+    ],
+    "unchanged": [
+      "build"
+    ],
+    "constants": [],
+    "topLevel": [
+      "(top-level code L17)"
+    ],
+    "edges": [
+      "(top-level code L17) > publish",
+      "publish > build",
+      "publish > upload"
+    ],
+    "tiers": {
+      "build": 2,
+      "publish": 1,
+      "upload": 2,
+      "(top-level code L17)": 0
+    },
+    "flags": {}
+  },
+  "routes/api.php": {
+    "status": "modified",
+    "changed": [],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [
+      "(top-level code L6)"
+    ],
+    "edges": [],
+    "tiers": {
+      "(top-level code L6)": 0
+    },
+    "flags": {}
+  }
+}

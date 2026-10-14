@@ -1,0 +1,26 @@
+{
+  "src/load.js": {
+    "status": "added",
+    "changed": [
+      "configure",
+      "normalize",
+      "forgotten"
+    ],
+    "unchanged": [],
+    "constants": [],
+    "topLevel": [],
+    "edges": [
+      "configure > normalize"
+    ],
+    "tiers": {
+      "configure": 0,
+      "normalize": 1,
+      "forgotten": 0
+    },
+    "flags": {
+      "forgotten": [
+        "new · no in-file callers"
+      ]
+    }
+  }
+}
